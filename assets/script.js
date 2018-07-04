@@ -2,10 +2,12 @@ var dropMenu = document.getElementById("drop-menu");
 dropMenu.addEventListener("change", trocaEfeito);
 
 function trocaEfeito(){
-  var efeito = dropMenu.value;
-  var pegaFoto = document.querySelectorAll(".thumbs-item");
+	var efeito = "";
+	efeito = dropMenu.value;
+  	var pegaFoto = document.querySelectorAll("thumbs-item");
   for (foto in pegaFoto){
 	  if (efeito == "sepia"){
+	  	console.log(pegaFoto[foto]);
 	  	pegaFoto[foto].classList.add("sepia");
 	  	}
 	  if (efeito == "grayscale"){
@@ -17,5 +19,5 @@ function trocaEfeito(){
 	  if (efeito == "") {
 	  	pegaFoto[foto].classList.add("no-filter");	  	
 	  }
-  }
+	}
 }
