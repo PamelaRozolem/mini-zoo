@@ -36,3 +36,18 @@ h1{
 	padding: 10px;
 }
 
+.sepia{
+	  filter: sepia(1);
+}
+
+.grayscale{
+	filter: grayscale(1);
+}
+
+.invert{
+	filter: invert(1);
+}
+
+.no-filter{
+	filter: none;
+}
