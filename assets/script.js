@@ -1,23 +1,24 @@
 var dropMenu = document.getElementById("drop-menu");
-dropMenu.addEventListener("change", trocaEfeito);
+dropMenu.addEventListener("change", cliqueEfeito);
+var pegaFoto = document.querySelectorAll(".thumbs-item");
 
-function trocaEfeito(){
-	var efeito = "";
-	efeito = dropMenu.value;
-  	var pegaFoto = document.querySelectorAll("thumbs-item");
-  for (foto in pegaFoto){
-	  if (efeito == "sepia"){
-	  	console.log(pegaFoto[foto]);
-	  	pegaFoto[foto].classList.add("sepia");
-	  	}
-	  if (efeito == "grayscale"){
-	  	pegaFoto[foto].classList.add("grayscale");
+function cliqueEfeito(){
+	pegaFoto.forEach( foto => {
+		var efeito = dropMenu.value;
+		if (efeito == "sepia"){
+			foto.classList = "thumbs-item";
+	  	foto.classList.add("sepia");
 	  }
-  	  if (efeito == "invert"){
-	  	pegaFoto[foto].classList.add("invert");
+	  if (efeito == "grayscale"){
+	  	foto.classList = "thumbs-item";
+	  	foto.classList.add("grayscale");
+	  }
+  	if (efeito == "invert"){
+	  	foto.classList = "thumbs-item";
+	  	foto.classList.add("invert");
 	  } 
 	  if (efeito == "") {
-	  	pegaFoto[foto].classList.add("no-filter");	  	
+	  	foto.classList = "thumbs-item";
 	  }
-	}
+	});
 }
